@@ -5,7 +5,7 @@ class Program{
     public static void main(String[] args){
         System.out.println("Привет, выбери что ты хочешь сделать: ");
         Matrix m = null;
-        Matrix[] all = new Matrix[3];
+        Matrix[] all = new Matrix[3];   
         int count = 0;
         Scanner ch = new Scanner(System.in);
         System.out.println();
@@ -15,6 +15,7 @@ class Program{
         System.out.println("Удалить матрицу (Напишите 2)");
         System.out.println("Напечатать матрицу (Напишите 3)");
         System.out.println("Изменить матрицу (Напишите 4)");
+        System.out.println("Сложить матрицы (Напишите 5)");
         int choise = ch.nextInt();
         switch (choise) {
             case 0:
@@ -45,11 +46,11 @@ class Program{
                 if(count == 1){
                     all[0].getM();
                     break;
-                } else {
+                } else if (count == 2){
                     System.out.println("Какую матрицу вы хотите вывести? Всего: " + count);
-                    int t = ch.nextInt()-1;
+                    int t = ch.nextInt();
                     if(t < 1 || t > 2){System.out.println("Матрицы не найдены"); break;}
-                    all[t].getM();
+                    all[t-1].getM();
                     break;
                 }
             case 4:
@@ -63,7 +64,11 @@ class Program{
                     all[t].chanM();
                     break;
                  }
-                
+            case 5:
+                all[0].plucM(all[1]);
+                System.out.println("Новая матрица:");
+                all[0].getM();
+                break;
             }
         }
     }
@@ -92,7 +97,7 @@ class Matrix{
         mat++;
     }
     public void getM(){                                     //Вывести матрицу
-        System.out.print("Ваша матрица номер: " + mat);
+        System.out.print("Полученная матрица: ");
         for(int i = 0; i < x; i++){
             System.out.println();
             for(int j = 0; j < y; j++){
@@ -110,6 +115,13 @@ class Matrix{
         System.out.println("Столбец: "); int b = s.nextInt()-1;
         System.out.println("Число: "); double z = s.nextDouble();
         arr[a][b] = z;
+    }
+    public void plucM(Matrix other){
+        for(int i = 0; i < x; i++){
+            for(int j = 0; j < y; j++){
+                this.arr[i][j] += other.arr[i][j];
+            }
+        }
     }
 }
 
