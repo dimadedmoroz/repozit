@@ -1,0 +1,2 @@
+Запускать "Program.java"
+f
