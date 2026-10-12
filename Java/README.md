@@ -1,2 +1,1 @@
 Запускать "Program.java"
-f
