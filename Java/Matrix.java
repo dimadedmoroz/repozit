@@ -13,7 +13,7 @@ class Matrix {
 
         for(int i = 0; i < x; i++){                
             for(int j = 0; j < y; j++){
-                System.out.println("Your rows: " + i + " your cols: " + j + " (например, 3+2i или 5):");
+                System.out.println("Your rows: " + i + " your cols: " + j + " (например 3+2i или 5):");
                 String v = s.next();
                 arr[i][j] = Complex.parse(v);
             }
@@ -35,7 +35,7 @@ class Matrix {
     public int getRows() { return x; }
     public int getCols() { return y; }
 
-    public void getM(){                        //Вывести матрицу
+    public void getM(){                                        //Вывести матрицу
         System.out.print("Полученная матрица: ");
         for(int i = 0; i < x; i++){
             System.out.println();
