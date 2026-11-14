@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build DBMS (javac)",
+            "type": "shell",
+            "command": "javac",
+            "args": [
+                "-encoding",
+                "UTF-8",
+                "-d",
+                "bin",
+                "src/main/java/dbms/*.java"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$javac"]
+        },
+        {
+            "label": "Run DBMS (java)",
+            "type": "shell",
+            "command": "java",
+            "args": [
+                "-Dfile.encoding=UTF-8",
+                "-cp",
+                "bin",
+                "dbms.Main"
+            ],
+            "dependsOn": "Build DBMS (javac)",
+            "problemMatcher": []
+        }
+    ]
+}

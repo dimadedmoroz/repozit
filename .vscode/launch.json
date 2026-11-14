@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run DBMS (Main)",
+            "request": "launch",
+            "mainClass": "dbms.Main",
+            "projectName": "simple-dbms",
+            "console": "integratedTerminal",
+            "vmArgs": "-Dfile.encoding=UTF-8"
+        }
+    ]
+}
